@@ -11,42 +11,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="/src/main.js"></script>
     <script src="/src/tailwind.config.js"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary-blue': '#4c7cff',
-                        'accent-pink': '#ff4c7c',
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 <body>
-
-    <!-- Contenedor para el contenido centrado sobre el canvas 3D -->
     <div id="content-overlay" class="absolute inset-0 z-10 flex flex-col items-center justify-center p-4 text-white text-center">
-        <!-- TÍTULO ANIMADO -->
         <h1 class="text-7xl sm:text-8xl md:text-9xl font-extrabold tracking-tight title-animated"
             style="text-shadow: 0 0 10px rgba(76, 124, 255, 0.7), 0 0 20px rgba(76, 124, 255, 0.5);">
             4
             <span class="text-accent-pink">DICIEMBRE</span>
         </h1>
-        <!-- SUBTÍTULO ACTUALIZADO Y AHORA ANIMADO (CLASES MODIFICADAS) -->
         <p class="mt-6 text-lg sm:text-xl font-light subtitle-animated">
             FELICIDADES ÓSCAR TERKELSEN GARCÍA
         </p>
         <div class="mt-8">
-            <!-- BOTÓN MODERNO CON ESTILO NEÓN Y FUNCIÓN ACTUALIZADA -->
             <button class="font-semibold py-3 px-8 rounded-xl transition duration-300 transform neon-button" onclick="celebrate()">
                 ¡Pulsa para Celebrar!
             </button>
         </div>
     </div>
 
-    <!-- El canvas de Three.js se insertará aquí -->
     <div id="three-container" class="fixed inset-0"></div>
 
 </body>
