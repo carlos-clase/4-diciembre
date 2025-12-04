@@ -1,3 +1,4 @@
+@import "tailwindcss";
 /* Aplicar la fuente Inter y asegurar que el cuerpo ocupe toda la pantalla */
 body {
     font-family: 'Inter', sans-serif;

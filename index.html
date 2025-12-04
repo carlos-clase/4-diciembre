@@ -3,14 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/styles.css">
     <title>4 de Diciembre - Experiencia 3D</title>
-    <!-- Carga de Tailwind CSS para el estilo moderno -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Carga de la biblioteca Three.js para el 3D -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="/src/main.js"></script>
-    <script src="/src/tailwind.config.js"></script>
+    <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
     <div id="content-overlay" class="absolute inset-0 z-10 flex flex-col items-center justify-center p-4 text-white text-center">
@@ -30,6 +25,6 @@
     </div>
 
     <div id="three-container" class="fixed inset-0"></div>
-
+    <script type="module" src="/src/main.js"></script>
 </body>
 </html>
