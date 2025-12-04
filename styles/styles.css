@@ -1,0 +1,95 @@
+/* Aplicar la fuente Inter y asegurar que el cuerpo ocupe toda la pantalla */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    overflow: hidden; /* Ocultar barras de desplazamiento */
+    background-color: #0d0d1a; /* Fondo muy oscuro */
+}
+canvas {
+    display: block;
+}
+
+/* --- ANIMACIÓN MEJORADA PARA EL TÍTULO (Pulse y Brillo de Color) --- */
+@keyframes pulse-color-shift {
+    0% {
+        /* Estado inicial: Brillo azul, escala normal, sin rotación */
+        text-shadow: 0 0 10px rgba(76, 124, 255, 0.9), 
+                        0 0 25px rgba(76, 124, 255, 0.6);
+        transform: scale(1) rotate(0deg);
+    }
+    33% {
+        /* Pico del pulso: Brillo más fuerte con toque rosa, ligeramente escalado y rotado */
+        text-shadow: 0 0 15px rgba(255, 76, 124, 1), 
+                        0 0 35px rgba(255, 76, 124, 0.8),
+                        0 0 50px rgba(76, 124, 255, 0.5);
+        transform: scale(1.03) rotate(-0.5deg);
+    }
+    66% {
+        /* Transición: Vuelve al brillo azul */
+        text-shadow: 0 0 10px rgba(76, 124, 255, 0.9), 
+                        0 0 25px rgba(76, 124, 255, 0.6);
+        transform: scale(1.01) rotate(0.5deg);
+    }
+    100% {
+            /* Vuelve al estado inicial */
+        text-shadow: 0 0 10px rgba(76, 124, 255, 0.9), 
+                        0 0 25px rgba(76, 124, 255, 0.6);
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.title-animated {
+    animation: pulse-color-shift 4s infinite ease-in-out; /* Animación más larga y fluida */
+}
+
+/* --- ANIMACIÓN PARA EL SUBTÍTULO (Glow Suave) --- */
+@keyframes subtitle-glow {
+    0%, 100% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 
+                        0 0 10px rgba(76, 124, 255, 0.3); /* Brillo Azul Suave */
+        opacity: 0.9;
+    }
+    50% {
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 
+                        0 0 15px rgba(255, 76, 124, 0.5); /* Brillo Rosa Suave */
+        opacity: 1;
+    }
+}
+
+.subtitle-animated {
+    animation: subtitle-glow 3s infinite alternate ease-in-out; 
+    letter-spacing: 0.1em; /* Añadir un poco de espacio para el efecto */
+}
+
+/* --- ESTILO Y ANIMACIÓN MEJORADA DEL BOTÓN DE NEÓN --- */
+@keyframes neon-pulse {
+    0%, 100% {
+        box-shadow: 0 0 8px rgba(76, 124, 255, 0.7), 
+                    0 0 15px rgba(76, 124, 255, 0.4); /* Azul más suave */
+        border-color: #4c7cff;
+    }
+    50% {
+        box-shadow: 0 0 12px rgba(255, 76, 124, 0.9), 
+                    0 0 20px rgba(255, 76, 124, 0.6); /* Rosa más fuerte */
+        border-color: #ff4c7c;
+    }
+}
+
+.neon-button {
+    background-color: #1a1a2e; /* Fondo oscuro sólido */
+    border: 2px solid;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    animation: neon-pulse 3s infinite alternate;
+}
+
+.neon-button:hover {
+    transform: scale(1.08) rotate(-1deg);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 1), 
+                0 0 25px rgba(76, 124, 255, 0.8), 
+                0 0 40px rgba(255, 76, 124, 0.8);
+}
+/* Eliminar estilos de Tailwind que sobrescriben el neón */
+.neon-button.shadow-lg {
+    box-shadow: none !important;
+}
